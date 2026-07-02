@@ -127,8 +127,32 @@
             border-color: var(--color-tertiary-container);
         }
     </style>
+<script src="/js/mobile-menu.js"></script>
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+<!-- Mobile Slide-Out Menu -->
+<nav id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-surface-container-low border-l border-outline-variant z-[70] transform translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
+<div class="flex items-center justify-between p-6 border-b border-outline-variant">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Menu</span>
+<button onclick="document.getElementById('mobile-menu-btn').click()" class="text-on-surface-variant hover:text-primary transition-colors" aria-label="Close menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4 flex-1">
+<a href="/" class="flex items-center gap-3 p-4 rounded-lg text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">home</span><span class="font-body-md text-body-md">Home</span></a>
+<a href="/research.html" class="flex items-center gap-3 p-4 rounded-lg text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">science</span><span class="font-body-md text-body-md">Research</span></a>
+<a href="/portal.html" class="flex items-center gap-3 p-4 rounded-lg text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">dashboard</span><span class="font-body-md text-body-md">Portals</span></a>
+<a href="/about.html" class="flex items-center gap-3 p-4 rounded-lg text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">spa</span><span class="font-body-md text-body-md">About</span></a>
+<a href="/support.html" class="flex items-center gap-3 p-4 rounded-lg text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">support_agent</span><span class="font-body-md text-body-md">Support</span></a>
+</div>
+<div class="p-4 border-t border-outline-variant">
+<button id="mobile-theme-toggle" onclick="window.ThemeToggle && window.ThemeToggle.toggle()" class="flex items-center gap-3 p-4 rounded-lg text-on-surface-variant hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors w-full"><span class="material-symbols-outlined">palette</span><span class="font-label-md text-label-md">Toggle Theme</span></button>
+<a href="/login.html" class="flex items-center justify-center gap-2 mt-3 p-4 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors">Patient Login</a>
+</div>
+<button id="mobile-menu-btn" class="md:hidden text-on-surface-variant hover:text-primary transition-colors p-1" aria-label="Open menu" aria-expanded="false"><span class="material-symbols-outlined text-[28px]">menu</span></button>
+</nav>
 <!-- TopNavBar -->
 <header class="bg-surface fixed top-0 w-full z-50 border-b border-surface-container">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
@@ -146,6 +170,7 @@
                     Patient Login
                 </a>
 </div>
+<button id="mobile-menu-btn" class="md:hidden text-on-surface-variant hover:text-primary transition-colors p-1" aria-label="Open menu" aria-expanded="false"><span class="material-symbols-outlined text-[28px]">menu</span></button>
 </div>
 </header>
 <!-- SideNavBar (Utility Controls) -->
