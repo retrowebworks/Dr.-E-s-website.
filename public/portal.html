@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portals - Autism's Saving Grace</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "var(--color-surface-dim)",
+                    "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                    "on-primary": "var(--color-on-primary)",
+                    "on-primary-container": "var(--color-on-primary-container)",
+                    "error": "var(--color-error)",
+                    "surface-variant": "var(--color-surface-variant)",
+                    "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                    "inverse-on-surface": "var(--color-inverse-on-surface)",
+                    "surface-container-highest": "var(--color-surface-container-highest)",
+                    "on-secondary-container": "var(--color-on-secondary-container)",
+                    "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                    "tertiary-fixed": "var(--color-tertiary-fixed)",
+                    "secondary-fixed-dim": "var(--color-secondary)",
+                    "on-secondary": "var(--color-on-secondary)",
+                    "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                    "surface-tint": "var(--color-surface-tint)",
+                    "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                    "surface-container-lowest": "var(--color-surface-container-lowest)",
+                    "secondary-container": "var(--color-secondary-container)",
+                    "outline-variant": "var(--color-outline-variant)",
+                    "tertiary-container": "var(--color-tertiary-container)",
+                    "surface-container-high": "var(--color-surface-container-high)",
+                    "on-surface": "var(--color-on-surface)",
+                    "outline": "var(--color-outline)",
+                    "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                    "inverse-surface": "var(--color-inverse-surface)",
+                    "primary-fixed": "var(--color-primary-fixed)",
+                    "surface-container-low": "var(--color-surface-container-low)",
+                    "on-tertiary-container": "var(--color-on-tertiary-container)",
+                    "inverse-primary": "var(--color-inverse-primary)",
+                    "error-container": "var(--color-error-container)",
+                    "primary-container": "var(--color-primary-container)",
+                    "on-tertiary": "var(--color-on-tertiary)",
+                    "on-error": "var(--color-on-error)",
+                    "on-background": "var(--color-on-background)",
+                    "secondary": "var(--color-secondary)",
+                    "tertiary": "var(--color-tertiary)",
+                    "on-primary-fixed": "var(--color-on-primary-fixed)",
+                    "surface-bright": "var(--color-surface-bright)",
+                    "background": "var(--color-background)",
+                    "on-surface-variant": "var(--color-on-surface-variant)",
+                    "surface": "var(--color-surface)",
+                    "primary": "var(--color-primary)",
+                    "on-error-container": "var(--color-on-error-container)",
+                    "surface-container": "var(--color-surface-container)",
+                    "tertiary-fixed-dim": "var(--color-tertiary)",
+                    "secondary-fixed": "var(--color-secondary-fixed)"
+            },
+            "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+            "spacing": { "unit": "8px", "margin-desktop": "64px", "margin-mobile": "20px", "gutter": "32px", "container-max-width": "1200px", "content-max-width": "720px" },
+            "fontFamily": { "label-md": ["Manrope"], "body-md": ["Manrope"], "headline-md": ["Manrope"], "body-lg": ["Manrope"], "headline-lg-mobile": ["Manrope"], "headline-lg": ["Manrope"], "caption": ["Manrope"] },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["30px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<link rel="stylesheet" href="/css/theme.css"/>
+<script src="/js/theme.js"></script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: var(--color-background); color: var(--color-on-surface); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        input:focus, textarea:focus { outline: none; border-width: 2px; border-color: var(--color-tertiary-container); }
+        .glass-panel { background: rgba(42, 42, 42, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(160, 141, 133, 0.2); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface fixed top-0 w-full z-50 border-b border-surface-container">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-gutter">
+<a href="/" <img src="/assets/logo.png" alt="Autism's Saving Grace" class="h-8 w-auto" />Autism's Saving Grace</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-colors" href="/">Research</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="/portal.html">Portals</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-colors" href="/about.html">About</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-colors" href="/support.html">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a href="/login.html" class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2 rounded hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors">Patient Login</a>
+</div>
+</div>
+</header>
+
+<!-- SideNavBar -->
+<aside class="hidden xl:flex bg-surface-container-low fixed right-0 top-24 rounded-l-xl border-l border-outline-variant flex-col gap-unit p-4 z-40">
+<div class="mb-4 pb-4 border-b border-outline-variant">
+<h3 class="font-label-md text-label-md text-primary mb-1">Utility Controls</h3>
+<p class="font-caption text-caption text-on-surface-variant">Sensory Sanctuary Settings</p>
+</div>
+<button id="sidebar-theme-toggle" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md hover:bg-tertiary-container hover:text-on-tertiary-container p-2 rounded transition-colors">
+<span class="material-symbols-outlined">palette</span>
+<span class="theme-label">Cream Gallery</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md hover:bg-tertiary-container hover:text-on-tertiary-container p-2 rounded transition-colors">
+<span class="material-symbols-outlined">visibility_off</span>
+<span>Calm Mode</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md hover:bg-tertiary-container hover:text-on-tertiary-container p-2 rounded transition-colors">
+<span class="material-symbols-outlined">motion_photos_off</span>
+<span>Reduce Motion</span>
+</button>
+</aside>
+
+<!-- Main Content -->
+<main class="flex-grow pt-[120px] pb-gutter px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto w-full">
+
+<!-- Hero -->
+<section class="mb-16 max-w-content-max-width">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+    The Biological Reversal ASD Ecosystem is a dedicated sanctuary for clinicians, researchers, and families. We curate complex biological data into actionable, serene interfaces, prioritizing cognitive focus over visual stimulation.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="#clinician-portal" class="bg-primary-container text-on-primary-container font-label-md text-label-md px-8 py-4 rounded hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors flex items-center gap-2">
+  Access Clinician Portal
+</a>
+<a href="#training" class="border border-secondary text-secondary font-label-md text-label-md px-8 py-4 rounded hover:bg-secondary-container hover:text-on-secondary-container transition-colors">
+  View Training Materials
+</a>
+</div>
+</section>
+
+<hr class="border-outline-variant opacity-30 my-16 w-1/3"/>
+
+<!-- Clinician Portal Data View -->
+<section id="clinician-portal" class="mb-16">
+<h2 class="font-headline-md text-headline-md text-tertiary mb-8 border-b border-tertiary-container pb-2">Clinician Portal Data View</h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+
+<!-- Patient Assessment Entry -->
+<div class="bg-surface-container border border-outline-variant p-8 rounded-xl">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Patient Assessment Entry</h3>
+
+<div class="flex flex-col gap-2 mb-6">
+<label class="font-label-md text-label-md text-on-surface-variant" for="patient_id">Patient ID</label>
+<input class="bg-surface-dim border border-outline-variant text-on-surface p-4 rounded w-full font-body-md text-body-md" id="patient_id" value="PTR-7729-A" type="text"/>
+</div>
+
+<div class="flex flex-col gap-2 mb-6">
+<label class="font-label-md text-label-md text-on-surface-variant" for="marker_alpha">Neurological Marker Alpha</label>
+<input class="bg-surface-dim border border-outline-variant text-on-surface p-4 rounded w-full font-body-md text-body-md" id="marker_alpha" value="Elevated - 4.2 µg/dL" type="text"/>
+</div>
+
+<div class="flex flex-col gap-2 mb-8">
+<label class="font-label-md text-label-md text-on-surface-variant" for="observation_notes">Observation Notes</label>
+<textarea class="bg-surface-dim border border-outline-variant text-on-surface p-4 rounded w-full font-body-md text-body-md resize-none" id="observation_notes" rows="4">Patient demonstrated improved sensory regulation during acoustic therapy session. Data suggests stabilization in hyper-responsive pathways.</textarea>
+</div>
+
+<div class="flex flex-wrap gap-4 items-center">
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-3 rounded hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors">
+    Save Patient Data
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">
+    Undo Changes
+</button>
+</div>
+</div>
+
+<!-- Trend Visualization -->
+<div class="bg-inverse-surface text-inverse-on-surface border border-outline-variant p-8 rounded-xl flex flex-col gap-6">
+
+<!-- Metabolic Processing Trend -->
+<div>
+<h4 class="font-label-md text-label-md mb-3 text-inverse-on-surface">Metabolic Processing Trend</h4>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden flex">
+    <div class="h-full bg-primary-container rounded-l-full" style="width: 68%"></div>
+    <div class="h-full bg-surface-container-high rounded-r-full flex-1"></div>
+</div>
+</div>
+
+<!-- Sensory Threshold Capacity -->
+<div>
+<h4 class="font-label-md text-label-md mb-3 text-inverse-on-surface">Sensory Threshold Capacity</h4>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden flex">
+    <div class="h-full bg-secondary-container rounded-l-full" style="width: 55%"></div>
+    <div class="h-full bg-surface-container-high rounded-r-full flex-1"></div>
+</div>
+</div>
+
+<!-- Chart Placeholder -->
+<div class="mt-4 bg-surface-container-lowest rounded-lg p-6 flex-1 min-h-[200px] flex flex-col justify-center">
+<h4 class="font-label-md text-label-md text-on-surface mb-4">Biological Marker Trends: Systemic Health Overview</h4>
+<p class="font-caption text-caption text-on-surface-variant mb-4">Longitudinal Data Analysis - Q1'02</p>
+<!-- Stylized chart lines -->
+<div class="relative h-32 flex items-end gap-1">
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-16 bg-primary/30 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-20 bg-primary/40 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-12 bg-primary/30 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-24 bg-primary/50 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-18 bg-secondary/40 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-28 bg-secondary/50 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-22 bg-tertiary/40 rounded-t"></div>
+    </div>
+    <div class="flex-1 flex flex-col justify-end gap-0.5">
+        <div class="h-20 bg-tertiary/30 rounded-t"></div>
+    </div>
+</div>
+<div class="flex justify-between mt-2">
+    <span class="font-caption text-caption text-on-surface-variant">Jan</span>
+    <span class="font-caption text-caption text-on-surface-variant">Feb</span>
+    <span class="font-caption text-caption text-on-surface-variant">Mar</span>
+    <span class="font-caption text-caption text-on-surface-variant">Apr</span>
+    <span class="font-caption text-caption text-on-surface-variant">May</span>
+    <span class="font-caption text-caption text-on-surface-variant">Jun</span>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- Training Materials -->
+<section id="training" class="mb-16">
+<h2 class="font-headline-md text-headline-md text-secondary mb-8">Training Materials</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-xl hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">school</span>
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Clinician Onboarding</h3>
+<p class="font-caption text-caption text-on-surface-variant">3-part guided introduction to the portal interface and data entry protocols.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-xl hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-hover:scale-110 transition-transform">lab_profile</span>
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Marker Interpretation</h3>
+<p class="font-caption text-caption text-on-surface-variant">Deep-dive into neurological marker categories and how to read trend visualizations.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-xl hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-tertiary text-3xl mb-4 group-hover:scale-110 transition-transform">shield</span>
+<h3 class="font-label-md text-label-md text-on-surface mb-2">HIPAA Compliance</h3>
+<p class="font-caption text-caption text-on-surface-variant">Required compliance training for all clinical staff with access to patient records.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- Support Chat Widget -->
+<button class="fixed bottom-6 right-6 bg-tertiary-container text-on-tertiary-container px-5 py-3 rounded-full shadow-lg font-label-md text-label-md flex items-center gap-2 hover:bg-tertiary hover:text-on-tertiary transition-colors z-50">
+<span class="material-symbols-outlined">chat</span>
+Support Chat
+</button>
+
+<!-- Footer -->
+<footer class="bg-surface-dim w-full mt-gutter border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter max-w-container-max-width mx-auto gap-4">
+<a href="/" class="font-label-md text-label-md text-primary">Autism's Saving Grace</a>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="/privacy.html">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="/accessibility.html">Accessibility Statement</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="/ethics.html">Clinical Ethics</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="/support.html">Contact Support</a>
+</nav>
+<p class="font-caption text-caption text-on-surface-variant">© 2026 Autism's Saving Grace ASD Ecosystem. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
