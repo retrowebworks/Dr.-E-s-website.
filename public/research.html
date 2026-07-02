@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bio-Reversal Research Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#141313",
+                        "primary-fixed-dim": "#ffb692",
+                        "on-primary": "#512308",
+                        "on-primary-container": "#ffebe3",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353434",
+                        "on-primary-fixed-variant": "#6d391d",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353434",
+                        "on-secondary-container": "#d6b470",
+                        "on-tertiary-fixed": "#24113d",
+                        "tertiary-fixed": "#eedcff",
+                        "secondary-fixed-dim": "#e5c27d",
+                        "on-secondary": "#402d00",
+                        "on-secondary-fixed-variant": "#5b4309",
+                        "surface-tint": "#ffb692",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-container": "#5d450b",
+                        "outline-variant": "#52443d",
+                        "tertiary-container": "#786393",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface": "#e5e2e1",
+                        "outline": "#a08d85",
+                        "on-tertiary-fixed-variant": "#513e6b",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#ffdbcb",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#f7eaff",
+                        "inverse-primary": "#8a4f32",
+                        "error-container": "#93000a",
+                        "primary-container": "#9a5d3e",
+                        "on-tertiary": "#3a2753",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e1",
+                        "secondary": "#e5c27d",
+                        "tertiary": "#d5bcf2",
+                        "on-primary-fixed": "#341000",
+                        "surface-bright": "#3a3939",
+                        "background": "#141313",
+                        "on-surface-variant": "#d7c2b9",
+                        "surface": "#141313",
+                        "primary": "#ffb692",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed-dim": "#d5bcf2",
+                        "secondary-fixed": "#ffdea1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "container-max-width": "1200px",
+                        "content-max-width": "720px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "caption": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col pt-24">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b-2 border-surface-container">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-gutter">
+<a href="/" class="font-headline-md text-headline-md font-bold text-primary tracking-tight">BIO-REVERSAL</a>
+<nav class="hidden md:flex gap-unit items-center ml-8">
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 px-2 mx-2" href="/research.html">Research</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors px-2 mx-2" href="/portal.html">Portals</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors px-2 mx-2" href="/about.html">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors px-2 mx-2" href="/support.html">Support</a>
+</nav>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 text-on-surface focus:outline-none focus:border-tertiary-container focus:ring-1 focus:ring-tertiary-container transition-colors font-body-md text-body-md w-64 placeholder-on-surface-variant" placeholder="Search" type="text"/>
+</div>
+<a href="/login.html" class="bg-primary-container text-on-primary-container hover:bg-tertiary-container hover:text-on-tertiary-container px-6 py-2 rounded-full font-label-md text-label-md transition-colors duration-300">
+                    Patient Login
+                </a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Utility Controls) -->
+<aside class="hidden xl:flex fixed right-0 top-32 rounded-l-xl bg-surface-container-low dark:bg-surface-container-low border-l border-outline-variant flex-col gap-unit p-4 z-40 w-64 shadow-2xl">
+<div class="mb-4 pb-4 border-b border-surface-container-highest">
+<h3 class="font-label-md text-label-md text-secondary">Utility Controls</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Sensory Sanctuary Settings</p>
+</div>
+<button class="flex items-center gap-3 w-full text-left p-3 rounded-lg text-on-surface-variant hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors duration-200">
+<span class="material-symbols-outlined">visibility_off</span>
+<span class="font-label-md text-label-md">Calm Mode</span>
+</button>
+<button class="flex items-center gap-3 w-full text-left p-3 rounded-lg text-on-surface-variant hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors duration-200">
+<span class="material-symbols-outlined">motion_photos_off</span>
+<span class="font-label-md text-label-md">Reduce Motion</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-gutter flex flex-col md:flex-row gap-gutter">
+<div class="flex-grow max-w-content-max-width mx-auto xl:mx-0">
+<!-- Page Header -->
+<div class="mb-16">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Research Library</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    A curated repository of sequential documentation exploring neurobiological frameworks and environmental interactions. Content is organized for high scannability and cognitive ease.
+                </p>
+</div>
+<!-- Sequential Modular Sections (Timeline) -->
+<div class="relative border-l-2 border-secondary-container/30 ml-4 md:ml-8 pl-8 md:pl-12 space-y-16">
+<!-- Module 1: ASD Frameworks -->
+<section class="relative group">
+<div class="absolute -left-[41px] md:-left-[57px] top-0 w-6 h-6 rounded-full bg-surface border-4 border-secondary-container z-10 flex items-center justify-center group-hover:border-primary-container transition-colors duration-300">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+</div>
+<div class="bg-surface-container rounded-xl p-8 border border-transparent hover:border-surface-container-highest transition-colors duration-300">
+<span class="inline-block px-3 py-1 mb-4 rounded bg-surface-container-highest text-secondary font-caption text-caption tracking-widest uppercase">Module 01</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Neurobiological ASD Frameworks</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="h-48 bg-surface-container-highest rounded-lg overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center opacity-80 mix-blend-luminosity" alt="Abstract neural pathways illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-ynScpU_7_PUzvwyGPbRsf-frzloO_vMq8jRQiqV9qbIbjD-06AYmMDnzuk37bIVHZaPK2PKr_wCEnudzOPgWhMu9_3DRKQHwWqUm6YTw9EJC7bxST-sayf0IJTmc9he1dsUtGeFj92ry5Zhu5BxtRUAALcAgQRyD-T43Bgr9g8pcSFRZL2ieujQaQpkbJwvhTIfnXzyVG519pTKTqeIjst0w1uFySGCIsN_3BcdRgAr6OFhLyMghiTwFV-3WA-udLLovmBpjFVOm')"></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                                    Analysis of atypical neural connectivity patterns, emphasizing structural variations in the prefrontal cortex and amygdala network structures.
+                                </p>
+<ul class="space-y-2 text-on-surface-variant font-body-md text-body-md">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+                                        Synaptic pruning anomalies
+                                    </li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+                                        Excitatory/inhibitory imbalance
+                                    </li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 mt-8 pt-6 border-t border-surface-container-highest">
+<button class="bg-primary-container text-on-primary-container hover:bg-tertiary-container hover:text-on-tertiary-container px-6 py-3 rounded font-label-md text-label-md transition-colors duration-300">
+                                View Full Publication
+                            </button>
+<button class="bg-transparent border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary px-6 py-3 rounded font-label-md text-label-md transition-colors duration-300">
+                                Access Research Data
+                            </button>
+</div>
+</div>
+</section>
+<!-- Module 2: Environmental Toxins -->
+<section class="relative group">
+<div class="absolute -left-[41px] md:-left-[57px] top-0 w-6 h-6 rounded-full bg-surface border-4 border-secondary-container z-10 flex items-center justify-center group-hover:border-primary-container transition-colors duration-300">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+</div>
+<div class="bg-surface-container rounded-xl p-8 border border-transparent hover:border-surface-container-highest transition-colors duration-300">
+<span class="inline-block px-3 py-1 mb-4 rounded bg-surface-container-highest text-secondary font-caption text-caption tracking-widest uppercase">Module 02</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Environmental Toxicant Interactions</h2>
+<div class="space-y-6">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Documented correlations between specific heavy metal exposures and neurodevelopmental disruption, focusing on oxidative stress pathways and mitochondrial dysfunction.
+                            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary">science</span>
+<h4 class="font-label-md text-label-md text-on-surface">Heavy Metals</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Cumulative exposure thresholds and transport mechanisms across the blood-brain barrier.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">air</span>
+<h4 class="font-label-md text-label-md text-on-surface">Particulate Matter</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Impact of PM2.5 on microglial activation and subsequent neuro-inflammation cascades.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 mt-8 pt-6 border-t border-surface-container-highest">
+<button class="bg-primary-container text-on-primary-container hover:bg-tertiary-container hover:text-on-tertiary-container px-6 py-3 rounded font-label-md text-label-md transition-colors duration-300">
+                                View Full Publication
+                            </button>
+<button class="bg-transparent border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary px-6 py-3 rounded font-label-md text-label-md transition-colors duration-300">
+                                Access Research Data
+                            </button>
+</div>
+</div>
+</section>
+<!-- Load More -->
+<div class="pt-8 flex justify-center">
+<button class="bg-surface-container-highest text-on-surface hover:bg-secondary-container hover:text-on-secondary-container px-8 py-3 rounded-full font-label-md text-label-md transition-colors duration-300 flex items-center gap-2">
+                        Load Sequential Modules
+                        <span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-gutter bg-surface-dim dark:bg-surface-dim bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter max-w-container-max-width mx-auto">
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<a href="/" class="font-label-md text-label-md text-primary block mb-2">BIO-REVERSAL</a>
+<p class="font-caption text-caption text-on-surface-variant">© 2026 Biological Reversal ASD Ecosystem. All rights reserved.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="/privacy.html">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="/accessibility.html">Accessibility Statement</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="/ethics.html">Clinical Ethics</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="/support.html">Contact Support</a>
+</nav>
+</div>
+</footer>
+</body></html>
