@@ -137,6 +137,16 @@
         transform-style: preserve-3d;
         will-change: transform, filter;
         position: relative;
+        cursor: grab;
+    }
+    .logo-hero-spin:active { cursor: grabbing; }
+    .logo-hero-spin.interactive {
+        animation: none;
+        transition: transform 0.1s ease-out, filter 0.1s ease-out;
+    }
+    .logo-hero-spin.releasing {
+        animation: none;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     /* Fake 3D extrusion — stacked depth layers */
     .logo-depth {
@@ -375,5 +385,54 @@
 <p class="font-caption text-caption text-on-surface-variant">© 2026 Autism's Saving Grace. All rights reserved.</p>
 </div>
 </footer>
+
+<script>
+(function() {
+    const wrap = document.querySelector('.logo-hero-wrap');
+    const spin = document.querySelector('.logo-hero-spin');
+    if (!wrap || !spin) return;
+
+    let isInteractive = false;
+    let rafId = null;
+    let currentX = 0, currentY = 0;
+    let targetX = 0, targetY = 0;
+
+    wrap.addEventListener('mouseenter', function() {
+        isInteractive = true;
+        spin.classList.add('interactive');
+        spin.classList.remove('releasing');
+    });
+
+    wrap.addEventListener('mousemove', function(e) {
+        if (!isInteractive) return;
+        const rect = wrap.getBoundingClientRect();
+        // -1 to 1, centered
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+        targetX = y * -30; // rotateX: up/down tilt (inverted for natural feel)
+        targetY = x * 30;  // rotateY: left/right tilt
+
+        // Shadow follows the "light source" opposite to tilt
+        const shadowX = x * -6;
+        const shadowY = y * -6;
+        spin.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg) scale3d(1.08, 1.08, 1.08)`;
+        spin.style.filter = `drop-shadow(${shadowX}px ${shadowY + 8}px 16px rgba(0,0,0,0.4))`;
+    });
+
+    wrap.addEventListener('mouseleave', function() {
+        isInteractive = false;
+        spin.classList.remove('interactive');
+        spin.classList.add('releasing');
+        spin.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        spin.style.filter = '';
+        // Resume auto-spin after transition
+        setTimeout(function() {
+            spin.classList.remove('releasing');
+            spin.style.transform = '';
+            spin.style.filter = '';
+        }, 600);
+    });
+})();
+</script>
 
 </body></html>
