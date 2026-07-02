@@ -1,0 +1,445 @@
+/* ═══════════════════════════════════════════════════
+   RetroWebWorks Deploy Kit — Design System Tokens
+   Generated from config/client.js theme values
+   ═══════════════════════════════════════════════════ */
+
+/* ─── CSS Custom Properties (Dark Theme: Cosmic Slate) ─── */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #030303;
+  --bg-card: #0d0d0d;
+  --bg-input: #1a1a1a;
+  --border-color: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-muted: #a0a0a0;
+  --accent-copper: #9a5d3e;
+  --accent-copper-hover: #b06e4a;
+  --accent-gold: #7d6227;
+  --accent-gold-hover: #9a7a33;
+  --accent-purple: #584472;
+  --accent-purple-hover: #6e5a8a;
+
+  --font-family: 'Abcdiatype', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 4px;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Typography scale */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.8125rem;  /* 13px — labels */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.5rem;     /* 24px */
+  --text-2xl: 2rem;      /* 32px */
+  --text-3xl: 2.5rem;    /* 40px */
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  color-scheme: dark;
+}
+
+/* ─── Light Theme: Cream Gallery ─── */
+[data-theme="light"] {
+  --bg-primary: #f5f0e8;
+  --bg-card: #ffffff;
+  --bg-input: #ede8df;
+  --border-color: #d4cfc6;
+  --text-primary: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --accent-copper: #9a5d3e;
+  --accent-copper-hover: #7a4a30;
+  --accent-gold: #7d6227;
+  --accent-gold-hover: #634e1f;
+  --accent-purple: #584472;
+  --accent-purple-hover: #45365b;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  color-scheme: light;
+}
+
+/* ─── Base Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+
+p {
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+a {
+  color: var(--accent-copper);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-copper-hover);
+}
+
+/* ─── Labels (PHASE 01, MODULE 02, etc.) ─── */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-copper);
+}
+
+.label--gold {
+  color: var(--accent-gold);
+}
+
+.label--purple {
+  color: var(--accent-purple);
+}
+
+/* ─── Cards ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--accent-copper);
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background-color: var(--accent-copper);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background-color: var(--accent-copper-hover);
+  box-shadow: var(--shadow-elevated);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn--secondary:hover {
+  border-color: var(--accent-copper);
+  color: var(--accent-copper);
+}
+
+.btn--gold {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+}
+
+.btn--gold:hover {
+  background-color: var(--accent-gold-hover);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Form Inputs ─── */
+.input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-copper);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+textarea.input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+/* ─── Navigation ─── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__logo {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--accent-copper);
+  text-decoration: none;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.navbar__link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--accent-copper);
+}
+
+.navbar__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-copper);
+}
+
+/* ─── Layout ─── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.page {
+  padding: var(--space-2xl) 0;
+}
+
+.section {
+  margin-bottom: var(--space-3xl);
+}
+
+/* ─── Footer ─── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.footer__links a {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer__links a:hover {
+  color: var(--accent-copper);
+}
+
+/* ─── Status Indicators ─── */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot--active { background: var(--accent-copper); }
+.status-dot--warning { background: var(--accent-gold); }
+.status-dot--info { background: var(--accent-purple); }
+
+/* ─── Phase Timeline Cards ─── */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.phase-card {
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.phase-card:hover {
+  border-color: var(--accent-copper);
+}
+
+.phase-card__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-copper);
+  margin-bottom: var(--space-sm);
+}
+
+.phase-card__title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.phase-card__subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* ─── Utility ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-xl); }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .navbar__links {
+    gap: var(--space-md);
+  }
+
+  .container {
+    padding: var(--space-md);
+  }
+
+  .phase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .phase-grid {
+    grid-template-columns: 1fr;
+  }
+}

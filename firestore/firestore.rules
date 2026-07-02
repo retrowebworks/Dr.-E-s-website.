@@ -1,0 +1,64 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Helper: role check from custom claims ---
+    function userRole() {
+      return request.auth.token.role;
+    }
+    function isAdmin() {
+      return request.auth != null && userRole() == 'admin';
+    }
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // /research/{docId} — public read, admin write
+    match /research/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // /users/{userId} — own doc read/write, admin can read all
+    match /users/{userId} {
+      allow read: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow write: if isSignedIn() && request.auth.uid == userId;
+      // ponytail: admin user-write (e.g. role changes) happens via Cloud Functions with admin SDK, bypasses rules
+    }
+
+    // /patients/{patientId} — assigned clinician OR admin
+    match /patients/{patientId} {
+      allow read, write: if isSignedIn() && (
+        isAdmin() ||
+        (userRole() == 'clinician' && resource.data.clinicianId == request.auth.uid)
+      );
+      // ponytail: create requires admin or clinician — new docs won't have resource.data yet,
+      // so clinician creates need clinicianId in request.resource.data matching auth.uid
+      allow create: if isSignedIn() && (
+        isAdmin() ||
+        (userRole() == 'clinician' && request.resource.data.clinicianId == request.auth.uid)
+      );
+    }
+
+    // /audit_log/{docId} — admin read only, no client writes
+    match /audit_log/{docId} {
+      allow read: if isAdmin();
+      allow write: if false;
+      // Cloud Functions use admin SDK — bypasses these rules
+    }
+
+    // /tickets/{ticketId} — creator read/write own, admin reads all
+    match /tickets/{ticketId} {
+      allow read: if isSignedIn() && (resource.data.creatorId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && request.resource.data.creatorId == request.auth.uid;
+      allow update, delete: if isSignedIn() && resource.data.creatorId == request.auth.uid;
+    }
+
+    // /config/{docId} — public read, admin write
+    match /config/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

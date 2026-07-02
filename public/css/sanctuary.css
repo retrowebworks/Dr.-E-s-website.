@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════════════
+   Sensory Sanctuary Settings
+   Theme toggle, Calm Mode, Reduce Motion
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Calm Mode ─── 
+   Reduces contrast, mutes accent colors, simplifies visual noise.
+   Applied when [data-calm="true"] is on <html>. */
+
+[data-calm="true"] {
+  --accent-copper: #8a7a6a;
+  --accent-copper-hover: #7a6a5a;
+  --accent-gold: #7a7060;
+  --accent-gold-hover: #6a6050;
+  --accent-purple: #6a6478;
+  --accent-purple-hover: #5a5468;
+  --text-muted: #888888;
+  --border-color: #222222;
+  --shadow-card: none;
+  --shadow-elevated: none;
+}
+
+[data-theme="light"][data-calm="true"] {
+  --accent-copper: #a09080;
+  --accent-copper-hover: #908070;
+  --accent-gold: #908060;
+  --accent-gold-hover: #807050;
+  --accent-purple: #807488;
+  --accent-purple-hover: #706478;
+  --text-muted: #888888;
+  --border-color: #ddd8d0;
+  --shadow-card: none;
+  --shadow-elevated: none;
+}
+
+/* Remove card hover effects in calm mode */
+[data-calm="true"] .card:hover {
+  box-shadow: none;
+  border-color: var(--border-color);
+}
+
+/* ─── Reduce Motion ───
+   Disables all animations and transitions.
+   Applied when [data-motion="reduced"] is on <html>,
+   OR when user's OS prefers reduced motion. */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+[data-motion="reduced"] *,
+[data-motion="reduced"] *::before,
+[data-motion="reduced"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ─── Sensory Controls Panel ─── */
+.sanctuary-panel {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-radius: var(--radius) 0 0 var(--radius);
+  box-shadow: var(--shadow-elevated);
+}
+
+.sanctuary-panel__title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--accent-copper);
+  margin-bottom: var(--space-xs);
+}
+
+.sanctuary-panel__subtitle {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.sanctuary-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xs);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.sanctuary-toggle:hover {
+  border-color: var(--accent-copper);
+}
+
+.sanctuary-toggle[aria-pressed="true"] {
+  background: var(--accent-copper);
+  color: #ffffff;
+  border-color: var(--accent-copper);
+}
+
+.sanctuary-toggle__icon {
+  font-size: var(--text-base);
+}
+
+/* ─── Sensory Buffer Status Bar ───
+   The "SENSORY BUFFER STATUS: OPERATIONAL" bar from the mockup */
+.sensory-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.sensory-status-bar__indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.sensory-status-bar__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+/* ─── Mobile: Collapse sanctuary panel ─── */
+@media (max-width: 768px) {
+  .sanctuary-panel {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: var(--radius) var(--radius) 0 0;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    padding: var(--space-sm);
+  }
+
+  .sanctuary-panel__title,
+  .sanctuary-panel__subtitle {
+    display: none;
+  }
+
+  .sensory-status-bar {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+}
