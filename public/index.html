@@ -136,6 +136,16 @@
         animation: logoSpin 20s linear 3s infinite;
         transform-style: preserve-3d;
         will-change: transform, filter;
+        position: relative;
+    }
+    /* Fake 3D extrusion — stacked depth layers */
+    .logo-depth {
+        position: absolute;
+        inset: 0;
+        background: url('/assets/logo.png') center/contain no-repeat;
+        transform: translateZ(var(--z));
+        filter: brightness(0.35) saturate(0.8);
+        opacity: 0.9;
     }
     .hero-title {
         opacity: 0;
@@ -212,9 +222,18 @@
 <div class="relative z-10 flex flex-col items-center text-center">
     <div class="logo-hero-wrap">
     <div class="logo-hero-spin">
+    <!-- Depth extrusion layers (back to front) -->
+    <div class="logo-depth" style="--z: -16px;"></div>
+    <div class="logo-depth" style="--z: -14px;"></div>
+    <div class="logo-depth" style="--z: -12px;"></div>
+    <div class="logo-depth" style="--z: -10px;"></div>
+    <div class="logo-depth" style="--z: -8px;"></div>
+    <div class="logo-depth" style="--z: -6px;"></div>
+    <div class="logo-depth" style="--z: -4px;"></div>
+    <div class="logo-depth" style="--z: -2px;"></div>
     <img src="/assets/logo.png"
          alt="Autism's Saving Grace"
-         class="logo-hero w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain mb-12" />
+         class="logo-hero w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain mb-12 relative z-10" />
     </div>
     </div>
 
