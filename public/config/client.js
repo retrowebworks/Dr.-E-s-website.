@@ -4,7 +4,7 @@
 
 const CLIENT = {
   // ─── Identity ──────────────────────────────────────
-  siteName: "BIO-REVERSAL",
+  siteName: "Autism's Saving Grace",
   tagline: "Restoring Balance. Navigating Biological Data with Dignity.",
   ownerName: "Dr. E",
   ownerCredentials: "MD, Board Certified",
@@ -18,9 +18,9 @@ const CLIENT = {
   // ─── Firebase (populated after project creation) ───
   firebase: {
     apiKey: "AIzaSyD0cgfs4t60wzwH-yrg01uA9VmFmVLAh2E",
-    authDomain: "bio-reversal-dev.firebaseapp.com",
-    projectId: "bio-reversal-dev",
-    storageBucket: "bio-reversal-dev.firebasestorage.app",
+    authDomain: "Autism's Saving Grace-dev.firebaseapp.com",
+    projectId: "Autism's Saving Grace-dev",
+    storageBucket: "Autism's Saving Grace-dev.firebasestorage.app",
     messagingSenderId: "90469299022",
     appId: "1:90469299022:web:5326f57a7da98b96ede41f",
     measurementId: "G-C92HJ61PYL"
