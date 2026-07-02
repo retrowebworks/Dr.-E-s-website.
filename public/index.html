@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-calm="false" data-motion="full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Restoring Balance. Navigating Biological Data with Dignity. A clinical research and education platform presenting a biological framework for understanding autism spectrum disorder.">
+  <title>BIO-REVERSAL — Restoring Balance</title>
+
+  <!-- Fonts — ponytail: using Inter as free fallback until Abcdiatype license confirmed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/sanctuary.css">
+
+  <style>
+    /* ponytail: inline hero styles — one page, no separate file needed */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 70vh;
+      padding: var(--space-3xl) var(--space-xl);
+    }
+    .hero__label {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-copper);
+      margin-bottom: var(--space-lg);
+    }
+    .hero__title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+      max-width: 14ch;
+    }
+    .hero__tagline {
+      font-size: var(--text-lg);
+      color: var(--text-muted);
+      max-width: 50ch;
+      margin-bottom: var(--space-2xl);
+    }
+    .hero__actions {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero__divider {
+      width: 60px;
+      height: 2px;
+      background: var(--accent-copper);
+      margin: var(--space-xl) auto;
+      border: none;
+    }
+
+    /* Disclaimer banner */
+    .disclaimer-banner {
+      padding: var(--space-sm) var(--space-xl);
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Phase section */
+    .phases-section {
+      padding: var(--space-2xl) var(--space-xl);
+    }
+    .phases-section__header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+    .phases-section__title {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-sm);
+    }
+    .phases-section__subtitle {
+      color: var(--text-muted);
+      font-size: var(--text-base);
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Sensory Buffer Status Bar -->
+  <div class="sensory-status-bar" role="status" aria-live="polite">
+    <div class="sensory-status-bar__indicator">
+      <span class="sensory-status-bar__dot"></span>
+      <span>Sensory Buffer Status: Operational</span>
+    </div>
+    <div class="sensory-status-bar__indicator">
+      <span>Sanctuary Settings: Active</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="/" class="navbar__logo" id="nav-logo">BIO-REVERSAL</a>
+    <ul class="navbar__links" id="nav-links">
+      <li><a href="/research.html" class="navbar__link" id="nav-research">Research</a></li>
+      <li><a href="/portal.html" class="navbar__link" id="nav-portals">Portals</a></li>
+      <li><a href="/about.html" class="navbar__link" id="nav-about">About</a></li>
+      <li><a href="/support.html" class="navbar__link" id="nav-support">Support</a></li>
+      <li><a href="/login.html" class="btn btn--secondary" id="nav-login">Patient Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="hero__label">Clinical Research & Education Platform</span>
+      <h1 class="hero__title" id="hero-title">BIO-REVERSAL</h1>
+      <hr class="hero__divider" aria-hidden="true">
+      <p class="hero__tagline">Restoring Balance. Navigating Biological Data with Dignity.</p>
+      <div class="hero__actions">
+        <a href="/research.html" class="btn btn--primary" id="cta-research">Explore Research Library</a>
+        <a href="/about.html" class="btn btn--secondary" id="cta-about">About the Framework</a>
+      </div>
+    </section>
+
+    <!-- Biological Development Phases -->
+    <section class="phases-section container" aria-labelledby="phases-title">
+      <div class="phases-section__header">
+        <span class="label">Chronological Framework</span>
+        <h2 class="phases-section__title" id="phases-title">Biological Development Phases</h2>
+        <p class="phases-section__subtitle">A phased analysis of environmental and biological factors across neurological development</p>
+      </div>
+
+      <div class="phase-grid" id="phase-grid">
+        <article class="phase-card" id="phase-01">
+          <div class="phase-card__label">Phase 01</div>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot--active" aria-label="Active"></span>
+            <h3 class="phase-card__title">Genetic & Epigenetic Susceptibility</h3>
+          </div>
+          <p class="phase-card__subtitle">Pre-conception through early embryonic development</p>
+        </article>
+
+        <article class="phase-card" id="phase-02">
+          <div class="phase-card__label">Phase 02</div>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot--active" aria-label="Active"></span>
+            <h3 class="phase-card__title">Prenatal Bio-Accumulation</h3>
+          </div>
+          <p class="phase-card__subtitle">Gestation weeks 12–40: toxicant loading patterns</p>
+        </article>
+
+        <article class="phase-card" id="phase-03">
+          <div class="phase-card__label">Phase 03</div>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot--warning" aria-label="In Progress"></span>
+            <h3 class="phase-card__title">Postnatal Toxicant Loading</h3>
+          </div>
+          <p class="phase-card__subtitle">Infancy through 24 months: environmental exposure cascades</p>
+        </article>
+
+        <article class="phase-card" id="phase-04">
+          <div class="phase-card__label">Phase 04</div>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot--info" aria-label="Planned"></span>
+            <h3 class="phase-card__title">Chronic Neuro-Inflammatory Cascade</h3>
+          </div>
+          <p class="phase-card__subtitle">Toddlerhood through adolescence: sustained biological response</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>
+      <a href="/" class="navbar__logo">BIO-REVERSAL</a>
+      <span style="margin-left: var(--space-md);">&copy; 2026 Biological Reversal ASD Ecosystem</span>
+    </div>
+    <ul class="footer__links">
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+      <li><a href="/accessibility.html">Accessibility</a></li>
+      <li><a href="/ethics.html">Clinical Ethics</a></li>
+      <li><a href="/support.html">Contact Support</a></li>
+    </ul>
+  </footer>
+
+  <!-- Disclaimer Banner -->
+  <div class="disclaimer-banner" role="contentinfo">
+    This website provides educational information based on clinical research and observations. 
+    It is not a substitute for professional medical advice, diagnosis, or treatment. 
+    Always seek the advice of your physician or other qualified health provider.
+  </div>
+
+  <!-- Config + Scripts -->
+  <script src="/config/client.js"></script>
+  <script src="/js/sanctuary.js"></script>
+</body>
+</html>
